@@ -44,7 +44,7 @@ def app(df, X, y):
     # Create a button to predict
     if st.button("Predict"):
         # Get prediction and model score
-        prediction, score = predict(X, y, features)
+        prediction, score,predicton1,score1,prediction2,score2 = predict(X, y, features)
         score = score 
         st.info("Predicted Sucessfully...")
 
@@ -68,4 +68,7 @@ def app(df, X, y):
             st.balloons()
 
         # Print teh score of the model 
-        st.text_area("Accuracy: ",value=f'This model has an accuracy of {score*100}',height=100)
+        st.text_area("Accuracy using Decision Tree Classifier: ",value=f'This model has an accuracy of {score*100}',height=100)
+        st.text_area("Accuracy using Random Forest Classifier: ",value=f'This model has an accuracy of {score1*100}',height=100)
+        st.text_area("Accuracy using Support Vector Machine Classifier: ",value=f'This model has an accuracy of {score2*100}',height=100)
+        
